@@ -12,7 +12,7 @@ const questions = [
             "禮貌地微笑，然後找個安靜的地方觀察他們。",
             "悄悄地退後幾步，觀察他們，並思考下一步應該怎麼辦。"
         ],
-        background: "lib/q1.gif"
+        background: "./lib/qone.gif"
     }, 
     {
         question: "來到了豬豬村莊，他們熱情的邀請你來到廚房，你發現裡面有好多奇特的食材。你的第一個想法是?",
@@ -22,7 +22,7 @@ const questions = [
             "哇那什麼螢光四季豆，真的可以吃嗎?",
             "發光的蘑菇！好酷！想吃！"
         ],
-        background: "lib/q2.gif"
+        background: "./lib/q2.gif"
     },
     {
         question: "你在村莊中發現了豬豬女孩，她看起來很煩惱，似乎是因為掉了一條魔法項鍊。",
