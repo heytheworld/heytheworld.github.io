@@ -139,11 +139,11 @@ function calculateResult() {
 function setBackground(background) {
     const backgroundContainer = document.getElementById('background-container');
     backgroundContainer.innerHTML = '';
-    if (background.endsWith('.jpg') || background.endsWith('.png')) {
+    if (background.endsWith('.jpg') || background.endsWith('.png') || background.endsWith('gif')) {
         const img = document.createElement('img');
         img.src = background;
         backgroundContainer.appendChild(img);
-    } else if (background.endsWith('.gif') || background.endsWith('.mp4')) {
+    } else if (background.endsWith('.mp4')) {
         const video = document.createElement('video');
         video.src = background;
         video.autoplay = true;
