@@ -85,9 +85,14 @@ const questions = [
 ];
 
 
+function showIntro() {
+    document.getElementById('start-screen').style.display = 'none';
+    document.getElementById('intro-screen').style.display = 'block';
+}
+
 function startQuiz() {
-    document.getElementById('intro').style.display = 'none';
-    document.getElementById('quiz').style.display = 'block';
+    document.getElementById('intro-screen').style.display = 'none';
+    document.getElementById('quiz-screen').style.display = 'block';
     const music = document.getElementById('background-music');
     music.play();
     showQuestion();
@@ -101,6 +106,34 @@ function showQuestion() {
         option.textContent = questionData.options[index];
     });
     setBackground(questionData.background);
+}
+
+function selectOption(index) {
+    answers.push(index);
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        showLoading();
+    }
+}
+
+function showLoading() {
+    document.getElementById('quiz-screen').style.display = 'none';
+    document.getElementById('loading').style.display = 'block';
+    setTimeout(showResult, 2000); // 模拟加载时间
+}
+
+function showResult() {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('result-screen').style.display = 'block';
+    const result = calculateResult();
+    document.getElementById('result').textContent = result;
+}
+
+function calculateResult() {
+    // 计算结果的逻辑
+    return "你的結果是：探索者";
 }
 
 function setBackground(background) {
@@ -120,79 +153,11 @@ function setBackground(background) {
     }
 }
 
-function selectOption(optionIndex) {
-    answers.push(optionIndex);
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showResult();
-    }
-}
-const loadingElement = document.getElementById('loading');
-
-function showLoading() {
-    loadingElement.style.display = 'block';
-}
-
-function hideLoading() {
-    loadingElement.style.display = 'none';
-}
-
-function showResult() {
-    showLoading();
-    document.getElementById('quiz').style.display = 'none';
-    document.getElementById('result').style.display = 'block';
-    const resultDescription = calculateResult();
-    document.getElementById('result-description').textContent = resultDescription;
-    hideLoading();
-    generateResultImage(resultDescription);
-}
-
-
-function calculateResult() {
-    // 計算結果的邏輯
-    return "你的結果是...";
-}
-
-function generateResultImage(resultDescription) {
-    const canvas = document.getElementById('result-canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = 800;
-    canvas.height = 400;
-
-    // 繪製背景
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // 繪製文字
-    ctx.fillStyle = '#000';
-    ctx.font = '30px Arial';
-    ctx.fillText(resultDescription, 50, 200);
-
-    // 將畫布轉換為圖像
-    const resultImage = document.getElementById('result-image');
-    resultImage.src = canvas.toDataURL('image/png');
-    resultImage.style.display = 'block';
-}
-
-function downloadResult() {
-    const resultImage = document.getElementById('result-image');
-    const link = document.createElement('a');
-    link.href = resultImage.src;
-    link.download = '測驗結果.png';
-    link.click();
-}
-
 function toggleMusic() {
     const music = document.getElementById('background-music');
-    const musicControl = document.getElementById('music-control');
     if (music.paused) {
         music.play();
-        musicControl.textContent = '暫停音樂';
     } else {
         music.pause();
-        musicControl.textContent = '播放音樂';
     }
 }
-
