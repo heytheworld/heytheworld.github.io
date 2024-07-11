@@ -129,14 +129,8 @@ function showQuestion() {
 }
 
 function selectOption(e) {
-    // 移除所有选项按钮的 :active 样式
-    const optionButtons = document.querySelectorAll('.option-btn');
-    optionButtons.forEach(button => {
-        button.classList.remove('option-btn:active');
-    });
-
-    // 添加选中选项的 :active 样式
-    e.target.classList.add('option-btn:active');
+    e.target.classList.remove('option-btn:active');
+    e.target.classList.remove('option-btn:hover');
     answers.push(e.target.dataset.answer);
     currentQuestion++;
     showNextQuestion();
