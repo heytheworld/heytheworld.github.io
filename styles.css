@@ -103,14 +103,24 @@ button {
 }
 
 .result-screen {
-    text-align: center; /* 居中显示按钮 */
+    text-align: center; /* 居中显示按钮和滑动选择器 */
+}
+
+.img-container {
+    width: 80%; /* 调整图片容器的宽度 */
+    margin: 0 auto; /* 居中显示图片容器 */
+}
+
+#result-img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: auto; /* 自适应高度 */
 }
 
 .button-container {
     display: flex; /* 使用 flex 布局使按钮水平排列 */
     justify-content: center; /* 水平居中按钮 */
     align-items: flex-start; /* 垂直顶部对齐按钮 */
-    margin-top: 20px; /* 调整按钮与图片的间距 */
+    margin-top: 20px; /* 调整按钮与滑动选择器的间距 */
 }
 
 .retry-btn, .share-btn {
@@ -130,9 +140,14 @@ button {
     border-color: #000000;
 }
 
+.slider {
+    width: 80%; /* 调整滑动选择器的宽度 */
+    margin-top: 20px; /* 调整滑动选择器与按钮的间距 */
+}
+
 .ig-link {
     display: block; /* 确保图片作为块级元素显示 */
-    margin-top: 20px; /* 调整 Instagram 图片与按钮之间的间距 */
+    margin-top: 20px; /* 调整 Instagram 图片与滑动选择器的间距 */
     width: 100px; /* 根据需要调整 Instagram 图片的宽度 */
     margin-left: auto; /* 居中显示 Instagram 图片 */
     margin-right: auto;

@@ -101,7 +101,6 @@ function showNextQuestion() {
         document.querySelector('.finding-gif').style.display = 'block';
         setTimeout(() => {
             document.querySelector('.finding-gif').style.display = 'none';
-            currentQuestion++;
             showQuestion();
         }, 1000);
     } else {
