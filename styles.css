@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'PreferredFont';
+    src: url('fonts/Rounded.ttc') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -57,6 +64,7 @@ button {
     text-align: left;  /* 文字左对齐 */
     word-wrap: break-word;  /* 自动换行 */
     padding: 0 5%;  /* 增加内边距，避免文字紧贴边界 */
+    font-family: 'PreferredFont', sans-serif;
 }
 
 .options {
@@ -71,6 +79,7 @@ button {
 }
 
 .option-btn {
+    font-family: 'PreferredFont', sans-serif;
     background: white;
     color: black;
     border: 2px solid black;

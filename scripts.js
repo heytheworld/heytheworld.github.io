@@ -125,6 +125,15 @@ function showQuestion() {
         btn.addEventListener('click', selectOption);
         optionsContainer.appendChild(btn);
     });
+
+    // 添加淡入效果的类
+    questionText.classList.add('fade-in');
+    options.classList.add('fade-in');
+    // 添加选项按钮的淡入效果
+    const optionBtns = document.querySelectorAll('.option-btn');
+    optionBtns.forEach(btn => {
+        btn.classList.add('fade-in');
+    });
 }
 
 function selectOption(e) {
