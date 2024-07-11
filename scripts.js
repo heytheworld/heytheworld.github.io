@@ -176,10 +176,10 @@ function toggleMusic() {
     const btn = document.querySelector('.music-toggle');
     if (music.paused) {
         music.play();
-        btn.innerText = 'Music Off';
+        btn.style.backgroundImage = "url('sound-on.jpg')";
     } else {
         music.pause();
-        btn.innerText = 'Music On';
+        btn.style.backgroundImage = "url('sound-off.jpg')";
     }
 }
 

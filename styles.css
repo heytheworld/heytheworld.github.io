@@ -153,15 +153,14 @@ button {
     margin-right: auto;
 }
 
-
 .music-toggle {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #fff;
+    width: 50px; /* 根据你的图片大小调整 */
+    height: 50px;
+    background-size: cover;
     border: none;
-    padding: 5px 10px;
     cursor: pointer;
+    transition: background-image 0.3s ease;
 }
-
-
