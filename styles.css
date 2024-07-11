@@ -1,134 +1,113 @@
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
-    position: relative;
+    background: #fff;  /* 背景颜色为白色 */
+    overflow: hidden;  /* 禁止滚动条 */
 }
 
-#app {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.image-container {
     position: relative;
-    max-width: 600px; /* 最大寬度，避免在大屏幕上擴展過寬 */
-    width: 90%; /* 自適應寬度 */
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.screen {
-    position: relative;
-    text-align: center;
-}
-
-.screen img {
-    max-width: 100%; /* 圖片最大寬度不超過容器 */
-    height: auto; /* 高度自適應 */
-    object-fit: cover; /* 保持圖片比例不變並填充容器 */
-    border-radius: 10px;
+img {
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+    margin: auto;
 }
 
 button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.fade-in {
+    animation: fadeIn 1s ease-in;
 }
 
-#question-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-#background-container {
+.start-btn, .understand-btn, .retry-btn, .share-btn {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-    border-radius: 10px;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#background-container img,
-#background-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    background-color: white;
-    animation: fade-in 0.5s
+.question-text {
+    position: absolute;
+    top: 10%;  /* 将题目文字再往上放 */
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    text-align: center;
+    max-width: 80%;  /* 限制最大宽度，避免超出图片范围 */
+    word-wrap: break-word;  /* 自动换行 */
+    padding: 0 5%;  /* 增加内边距，避免文字紧贴边界 */
 }
 
 .options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.option {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.option:hover {
-    background-color: #0056b3;
-}
-#loading {
-    display: none; /* 預設隱藏 loading */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#loading img {
-    display: block;
-    margin: 0 auto;
-}
-#result-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#music-control {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10%;  /* 将选项按钮再往上放 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;  /* 允许换行 */
+    justify-content: center;  /* 选项按钮居中 */
+    width: 80%;  /* 限制最大宽度，避免超出图片范围 */
+}
+
+.option-btn {
+    background: white;
+    color: black;
+    border: 2px solid black;
     padding: 10px 20px;
-    background-color: #28a745;
+    margin: 5px;
+    transition: all 0.3s ease;
+    flex: 1 1 45%;  /* 选项按钮宽度为45%，根据空间自动调整 */
+    max-width: 45%;  /* 限制最大宽度 */
+    box-sizing: border-box;  /* 包括边框在内计算宽度 */
+    text-align: center;  /* 文字居中 */
+}
+
+.option-btn:hover {
+    background: black;
     color: white;
+}
+
+.option-btn:active {
+    background: black;
+    color: white;
+}
+
+.music-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 
-#music-control:hover {
-    background-color: #218838;
+.ig-link {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
