@@ -9,12 +9,12 @@
 <body>
     <div class="start-screen">
         <img src="start-bg.png" class="fade-in" />
-        <button class="start-btn">開始</button>
+        <button class="start-btn fade-in"">開始</button>
     </div>
     
     <div class="show-screen" style="display: none;">
         <img src="intro-bg.png" class="fade-in" />
-        <button class="understand-btn">了解</button>
+        <button class="understand-btn fade-in">了解</button>
     </div>
 
     <div class="question-screen" style="display: none;">
@@ -41,11 +41,13 @@
 
     <div class="result-screen" style="display: none;">
         <img id="result-img" src="" class="fade-in" />
-        <button class="retry-btn">再玩一次</button>
-        <button class="share-btn">分享結果</button>
-        <a href="https://www.instagram.com/youraccount">
-            <img src="sub.png" class="ig-link" />
-        </a>
+    	<div class="button-container">
+        	<button class="retry-btn">再玩一次</button>
+        	<button class="share-btn">分享結果</button>
+    	</div>
+    	<a href="https://www.instagram.com/piglifesohard">
+        	<img src="start-bg.png" class="ig-link" />
+    	</a>
     </div>
 
     <button class="music-toggle">Music On</button>

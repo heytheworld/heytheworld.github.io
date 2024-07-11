@@ -110,6 +110,7 @@ function showNextQuestion() {
 }
 
 function showQuestion() {
+    const questionScreen = document.querySelector('.question-screen');
     document.querySelector('.question-screen').style.display = 'block';
     const question = questions[currentQuestion];
     document.getElementById('question-img').src = question.img;
@@ -126,14 +127,9 @@ function showQuestion() {
         optionsContainer.appendChild(btn);
     });
 
-    // 添加淡入效果的类
-    questionText.classList.add('fade-in');
-    options.classList.add('fade-in');
-    // 添加选项按钮的淡入效果
-    const optionBtns = document.querySelectorAll('.option-btn');
-    optionBtns.forEach(btn => {
-        btn.classList.add('fade-in');
-    });
+    // 显示题目容器并添加淡入效果
+    questionScreen.style.display = 'block';
+    questionScreen.classList.add('fade-in');
 }
 
 function selectOption(e) {

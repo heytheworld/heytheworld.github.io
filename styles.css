@@ -102,6 +102,43 @@ button {
     color: white;
 }
 
+.result-screen {
+    text-align: center; /* 居中显示按钮 */
+}
+
+.button-container {
+    display: flex; /* 使用 flex 布局使按钮水平排列 */
+    justify-content: center; /* 水平居中按钮 */
+    align-items: flex-start; /* 垂直顶部对齐按钮 */
+    margin-top: 20px; /* 调整按钮与图片的间距 */
+}
+
+.retry-btn, .share-btn {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    margin: 0 10px; /* 调整按钮之间的间距 */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.retry-btn:hover, .share-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.ig-link {
+    display: block; /* 确保图片作为块级元素显示 */
+    margin-top: 20px; /* 调整 Instagram 图片与按钮之间的间距 */
+    width: 100px; /* 根据需要调整 Instagram 图片的宽度 */
+    margin-left: auto; /* 居中显示 Instagram 图片 */
+    margin-right: auto;
+}
+
+
 .music-toggle {
     position: absolute;
     top: 10px;
@@ -112,10 +149,4 @@ button {
     cursor: pointer;
 }
 
-.ig-link {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
