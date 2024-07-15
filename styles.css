@@ -14,7 +14,6 @@ body, html {
     justify-content: center;
     align-items: center;
     background: #fff;  /* 背景颜色为白色 */
-    overflow: hidden;  /* 禁止滚动条 */
 }
 
 .image-container {
@@ -102,46 +101,11 @@ button {
     color: white;
 }
 
-.result-screen {
-    display: none;
-}
-
-.img-container {
-    width: 100%;
-    max-width: 100%;
-}
-
 #result-img {
-    width: 100%;
-    height: auto;
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-    padding: 0 10px;
-}
-
-.retry-btn, .share-btn {
-    font-family: 'PreferredFont', sans-serif;
-    background: white;
-    color: black;
-    border: 2px solid black;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-    flex: 1;
-    margin: 0 5px;
-}
-
-.retry-btn:hover, .share-btn:hover {
-    background: black;
-    color: white;
-}
-
-.retry-btn:active, .share-btn:active {
-    background: black;
-    color: white;
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+    margin: auto;
 }
 
 .ig-link {
@@ -155,6 +119,51 @@ button {
     margin-top: 10px;
 }
 
+.result-section, .sub-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.result-image, .sub-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+.action-button {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'PreferredFont', sans-serif;
+    background: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    flex: 1 1 45%;  /* 选项按钮宽度为45%，根据空间自动调整 */
+    margin: 0 5px;
+}
+
+.action-button:hover {
+    background: black;
+    color: white;
+}
+
+.action-button:active {
+    background: white;
+    color: black;
+}
 
 .music-toggle {
     position: absolute;
