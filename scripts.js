@@ -3,7 +3,7 @@ let answers = [];
 
 const questions = [
     {
-        img: "q1.gif",
+        img: "image/q1.gif",
         text: "剛掉進異世界，發現前面有一群豬豬正跟你打招呼，你會：",
         options: [
             { text: "熱情的朝向他們走過去開始攀談", answer: "E" },
@@ -11,7 +11,7 @@ const questions = [
         ]
     },
     {
-        img: "q2.gif",
+        img: "image/q2.gif",
         text: "走著走著來到了豬豬村莊，他們熱情的邀請你來到廚房，你發現裡面有好多奇特的食材。你的第一個想法是：",
         options: [
             { text: "叫我來廚房幹嘛，會被當成食材料理嗎", answer: "S" },
@@ -21,17 +21,17 @@ const questions = [
         ]
     },
     {
-        img: "q3.gif",
-        text: "你在村莊中發現了豬豬女孩，她看起來很煩惱，因為掉了一條魔法項鍊。你會說：",
+        img: "image/q3.gif",
+        text: "你在村莊中發現了豬豬女孩，她正因為掉了一條魔法項鍊正在哭泣。你會說：",
         options: [
             { text: "還好嗎？沒事吧？我幫你一起找", answer: "F" },
-            { text: "什麼是魔法項鍊啊？", answer: "T" },
+            { text: "這是一條長怎麼樣的項鍊呢？", answer: "T" },
             { text: "你最後一次看到它在哪呢？", answer: "T" },
             { text: "別哭啦！沒事的～一定找得到的！", answer: "F" }
         ]
     },
     {
-        img: "q4.gif",
+        img: "image/q4.gif",
         text: "不知不覺走進了一片奇幻的森林，在這你遇到了一隻修行豬豬，完成他的謎題就可以獲得寶藏地圖。你會：",
         options: [
             { text: "看能不能用神秘髮夾交換地圖", answer: "P" },
@@ -39,7 +39,7 @@ const questions = [
         ]
     },
     {
-        img: "q5.gif",
+        img: "image/q5.gif",
         text: "獲得寶藏地圖後你在森林中迷路了，突然看到前方有兩條路，一條通向光明的湖邊，另一條通向陰暗的山洞。你的第一個念頭是：",
         options: [
             { text: "先走到有光的地方吧", answer: "N" },
@@ -49,8 +49,8 @@ const questions = [
         ]
     },
     {
-        img: "q6.gif",
-        text: "突然聽到一陣音樂聲傳來，原來是一群愛跳舞的豬豬在舉行派對。仔細看，會選擇哪隻豬豬問路：",
+        img: "image/q6.gif",
+        text: "突然聽到一陣音樂聲傳來，原來是一群愛跳舞的豬豬在舉行派對。仔細看，你會選擇哪隻豬豬問路呢？",
         options: [
             { text: "A", answer: "N" },
             { text: "B", answer: "S" },
@@ -59,21 +59,21 @@ const questions = [
         ]
     },
     {
-        img: "q7.png",
+        img: "image/q7.png",
         text: "走出森林後你發現了豬豬市場，每個攤位上有各種奇異的商品，你會：",
         options: [
-            { text: "好不容易穿越了一定要買的吧", answer: "P" },
-            { text: "每攤都逛起來！", answer: "P" },
-            { text: "想買指南針，不然老是迷路", answer: "J" },
-            { text: "等等應該會肚子餓，先看看有沒有食物", answer: "J" }
+            { text: "好不容易來到豬豬世界了一定要買的吧！", answer: "P" },
+            { text: "咦 豬豬市場的遊戲是什麼啊？跟人類世界好像不一樣？", answer: "P" },
+            { text: "路程還很長若是晚上還無法抵達就麻煩了，還是先走好了", answer: "J" },
+            { text: "等等應該會肚子餓，先買點食物備著好了", answer: "J" }
         ]
     },
     {
-        img: "q8.gif",
+        img: "image/q8.gif",
         text: "跋山涉水之後，你終於到達了寶藏所在地。在那裡你第一個注意到的是：",
         options: [
             { text: "漂浮在半空中的巨大水晶", answer: "P" },
-            { text: "上面刻滿了神秘符文的石碑", answer: "J" },
+            { text: "上面刻滿了神秘符文的圓形巨石", answer: "J" },
             { text: "漂浮的發光小豬豬", answer: "P" },
             { text: "大門上的印記", answer: "J" }
         ]
@@ -148,7 +148,7 @@ function analyzeResults() {
 
 function showResults() {
     const result = calculateMBTI(answers);
-    document.getElementById('result-img').src = `${result}.png`;
+    document.getElementById('result-img').src = `image/${result}.png`;
     document.querySelector('.result-screen').style.display = 'block';
 }
 
