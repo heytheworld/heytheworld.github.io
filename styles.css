@@ -60,7 +60,7 @@ button {
     cursor: pointer;
     transform: translateX(-50%);
     border: 7px solid #000000;
-    font-family: 'PreferredFont', sans-serif;
+    font-family: sans-serif;
 }
 
 .understand-btn {
@@ -75,7 +75,7 @@ button {
     cursor: pointer;
     transform: translateX(-50%);
     border: 5px solid white;
-    font-family: 'PreferredFont', sans-serif;
+    font-family: sans-serif;
 }
 
 .question-text {
@@ -87,7 +87,7 @@ button {
     text-align: left;  /* 文字左对齐 */
     word-wrap: break-word;  /* 自动换行 */
     padding: 0 5%;  /* 增加内边距，避免文字紧贴边界 */
-    font-family: 'PreferredFont', sans-serif;
+    font-family: sans-serif;
 }
 
 .options {
@@ -102,7 +102,7 @@ button {
 }
 
 .option-btn {
-    font-family: 'PreferredFont', sans-serif;
+    font-family:  sans-serif;
     background: white;
     color: black;
     border: 2px solid black;
