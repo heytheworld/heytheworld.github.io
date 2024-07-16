@@ -194,8 +194,8 @@ document.getElementById('share-btn').addEventListener('click', () => {
     console.log("分享結果按鈕被點擊");
     if (navigator.share) {
         navigator.share({
-        title: '心理測驗結果',
-        text: '看看我的心理測驗結果！',
+        title: '豬豬調查局',
+        text: '趕緊來一趟異世之旅確認你的豬豬身份吧！',
         url: window.location.href
     }).then(() => {
         console.log('結果已成功分享');
