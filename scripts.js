@@ -102,7 +102,7 @@ function showNextQuestion() {
         setTimeout(() => {
             document.querySelector('.finding-gif').style.display = 'none';
             showQuestion();
-        }, 1000);
+        }, 3000);
     } else {
         showQuestion();
     }
@@ -183,14 +183,28 @@ function toggleMusic() {
     }
 }
 
-document.querySelector('.retry-btn').addEventListener('click', () => {
+document.getElementById('retry-btn').addEventListener('click', () => {
     currentQuestion = 0;
     answers = [];
     document.querySelector('.result-screen').style.display = 'none';
     document.querySelector('.start-screen').style.display = 'block';
 });
 
-document.querySelector('.share-btn').addEventListener('click', () => {
-    // 分享功能的實現，例如通過社交媒體API
+document.getElementById('share-btn').addEventListener('click', () => {
+    console.log("分享結果按鈕被點擊");
+    if (navigator.share) {
+        navigator.share({
+        title: '心理測驗結果',
+        text: '看看我的心理測驗結果！',
+        url: window.location.href
+    }).then(() => {
+        console.log('結果已成功分享');
+    }).catch((error) => {
+        console.error('分享失敗', error);
+    });
+    } else {
+        // 瀏覽器不支持 Web Share API 時的替代方案
+        alert('您的瀏覽器不支持分享功能');
+    }
 });
 
